@@ -1,4 +1,5 @@
-// Using a nested class
+// test comment for github
+
 #include <cstdlib>                     // For random number generation
 #include <ctime>                       // For the std::time() function
 #include "Solar.h"
