@@ -30,6 +30,7 @@ Planet::Planet(double orb, int oz, double cr, double dm, double dy, double lm)
     temperature = ((temp4 - 273.15)*(9/5)) + 32.0;//Kelvin to Farenheit
     //mmwr = (pow(1.86,19))*temp3*orbital_radius*(pow(1.0, 3))/(mass*pow(5.98,24));//wrong formula
     mmwr = (pow(3.11,-3))*temp3*orbital_radius/mass;
+    std::cout<<"mmwr = "<<mmwr<<"\n";
     atmos_type ={"Vacuum"};
     if(mmwr<=119)
     {
@@ -110,6 +111,7 @@ void Planet::listTitle() const{
   <<sep<<std::setw(mass_width)<<"Mass"
   <<sep<<std::setw(gravity_width)<<"Gravity"
   <<sep<<std::setw(temperature_width)<<"Temperature"
+  <<sep<<std::setw(mmwr_width)<<"MMWR"
   <<sep<<std::setw(type_width)<<"Type"<<std::endl;
   std::cout<<std::setw(zone_width)<<" "
   <<sep<<std::setw(orbit_width)<<"(Earth=1.0)"
@@ -132,6 +134,7 @@ void Planet::listPlanets() const{
   <<sep<<std::setw(mass_width)<<std::setfill(' ')<<std::setprecision(6)<<mass
   <<sep<<std::setw(gravity_width)<<std::setfill(' ')<<std::setprecision(6)<<gravity
   <<sep<<std::setw(temperature_width)<<std::setfill(' ')<<std::setprecision(6)<<temperature
+  <<sep<<std::setw(mmwr_width)<<std::setfill(' ')<<std::setprecision(6)<<mmwr
   <<sep<<std::setw(type_width)<<std::setfill(' ')<<std::setprecision(6)<<world_type<<std::endl;
 
 }

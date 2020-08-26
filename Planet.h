@@ -54,6 +54,7 @@ private:
   const int gravity_width = 12;//4
   const int temperature_width = 12;//5
   const int type_width = 10;//10
+  const int mmwr_width = 12;
   const std::string sep = " | ";
 
   public:
