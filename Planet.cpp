@@ -58,13 +58,22 @@ Planet::Planet(double orb, int oz, double cr, double dm, double dy, double lm)
       if(orbital_zone==2)
       {
         world_type ={"Desert"};
-        if(orbital_zone==3)
+      }
+      if(orbital_zone==3)
       {
         world_type ={"Failed Core"};
       }
+      if(orbital_zone==4)
+      {
+        world_type ={"Failed Core"};
+        if(mass>=1.5)
+        {
+          world_type={"Super_Terran"};
+        }
       }
     }
-    if(mmwr<=19)
+    //Expanded Habital range from <=19 mmwr to <=32 mmwr
+    if(mmwr<=32)
     {
       atmos_type ={"Dense"};
       if(orbital_zone==1)
@@ -78,6 +87,14 @@ Planet::Planet(double orb, int oz, double cr, double dm, double dy, double lm)
       if(orbital_zone==3)
       {
         world_type ={"Failed Core"};
+      }
+      if(orbital_zone==4)
+      {
+        world_type ={"Failed Core"};
+        if(mass>=1.0)
+        {
+          world_type={"Super_Terran"};
+        }
       }
     }
     if(mmwr<=4)

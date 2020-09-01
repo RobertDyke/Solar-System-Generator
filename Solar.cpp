@@ -145,6 +145,7 @@ void Solar::generateZones()
   //find habitable zone using luminosity
   inner_habitable = inner_multiplier * (sqrt(star_lumin));
   outer_habitable = outer_multiplier * (sqrt(star_lumin));
+  extended_habitable = extended_habitable * (sqrt(star_lumin));
   
 }
 
@@ -159,14 +160,19 @@ void Solar::getFirstOrbit()
   }
   else
   {
-    if(orbit_radius <= outer_habitable)
-    {
-      zone.push_back(2);//it is in the habitable zone
-    }
-    else
+    if(orbit_radius > outer_habitable)
     {
       zone.push_back(3);//it is in the outer zone
     }
+    else if(orbit_radius >= extended_habitable)
+    {
+      zone.push_back(4);//it is in the extended habitable zone
+    }
+    else
+    {
+      zone.push_back(2);//it is in the habitable zone
+    }
+    
   }
   
 }
@@ -187,13 +193,17 @@ void Solar::getNextOrbit()
   }
   else
   {
-    if(new_orbit <= outer_habitable)
+    if(new_orbit > outer_habitable)
     {
-      zone.push_back(2);//it is in the hsbitable zone
+      zone.push_back(3);//it is in the habitable zone
+    }
+    else if(new_orbit >= extended_habitable)
+    {
+      zone.push_back(4);//it is in the extended habitable zone
     }
     else
     {
-      zone.push_back(3);//it is in the outer zone
+      zone.push_back(2);//it is in the outer zone
     }
   }
 

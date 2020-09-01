@@ -10,7 +10,7 @@ class Planet
 {
 private:
   double orbital_radius {1.0};
-  int orbital_zone {1}; //1 = inner, 2 = habitable, 3 = outer
+  int orbital_zone {1}; //1 = inner, 2 = habitable, 3 = outer, 4 = extended_habitable 
   double core {1.0};
   double diameter{1.0};
   double density {1.0};
@@ -58,17 +58,18 @@ private:
   const std::string sep = " | ";
 
   public:
+ 
+  
   // Constructors
   Planet(double cr, double dm, double dy)  : core {cr}, diameter {dm}, density {dy}{};
 
   //current constructer
+  //Planet(double orb, int oz, double cr, double dm, double dy, double lm) ;
   Planet(double orb, int oz, double cr, double dm, double dy, double lm) ;
-  
   // No-arg constructor
   Planet() = default;                               
 
   double volume() const;                        
-
   void listTitle() const;//generates title bar for list of Planets
   void listPlanets() const;//generates list of Planets
 };

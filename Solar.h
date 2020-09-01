@@ -106,9 +106,10 @@ private:
   double luminosity {};//correct variable name is star_lumin
   double inner_habitable {}; //inner boundary of the habitable zone
   double outer_habitable {}; //outer boundary of the habitable zone
+  double extended_habitable {}; //to account for super terrans that are habitable
   double inner_multiplier {0.72};
-  double outer_multiplier {1.45};  
-  
+  double outer_multiplier {3.5};  //was 1.45 (just inside of Mar's orbit) changed to asteroid belt orbit
+  double extended_multiplier {2.5};
   
 /*
   Orbit is the distance from the star to the planet that it orbits. It contains pointers to the next orbit, and the planet in its location.
