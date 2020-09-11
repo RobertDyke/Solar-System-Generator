@@ -27,7 +27,7 @@ inline SharedPlanet generatePlanet(double orbit,int zone,double luminosity,std::
   double diameter {0};
   double density;
   //generate core type
-  if(zone>2&&(random(6))>2)
+  if(zone==3&&(random(6))>2)
   {
     core = 2;//make core icy
   }
