@@ -75,10 +75,11 @@ int main()
   std::vector<Solar> Systems;                     // Create an empty list
   //Solar star;
   Solar load1;
+  Solar load2[10];
   
   int number_stars = 1;
   load1.addStar("AlphaCentauri G2",'G',2,5);
-  //load1.push_back(star);
+  Systems.push_back(load1);
 
   //load1.addStar("Alpha Centauri K0",'K',0,5);
   //load1.push_back(star);
@@ -97,7 +98,7 @@ int main()
 
     // Add random Planet objects to the list
     unsigned int number_planets {1};
-    number_planets = numberPlanets();
+    number_planets = numberPlanets();//generates 3d6 planets
     
    
     const size_t PlanetCount {number_planets};

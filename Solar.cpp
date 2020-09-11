@@ -145,7 +145,7 @@ void Solar::generateZones()
   //find habitable zone using luminosity
   inner_habitable = inner_multiplier * (sqrt(star_lumin));
   outer_habitable = outer_multiplier * (sqrt(star_lumin));
-  extended_habitable = extended_habitable * (sqrt(star_lumin));
+  extended_habitable = extended_multiplier * (sqrt(star_lumin));
   
 }
 
